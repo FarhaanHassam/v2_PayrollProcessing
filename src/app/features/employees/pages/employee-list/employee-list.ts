@@ -1,8 +1,5 @@
 import { ChangeDetectionStrategy, Component, type TemplateRef, computed, inject, signal } from "@angular/core";
-import { CurrencyPipe, DatePipe } from "@angular/common";
-import { RouterLink } from "@angular/router";
 import { NgbModal, type NgbModalRef } from '@ng-bootstrap/ng-bootstrap/modal';
-import { NgbPagination } from "@ng-bootstrap/ng-bootstrap";
 import { PAYROLL_VALIDATION } from "../../../../core/constants/payroll.constants";
 import { ApiRequestError } from "../../../../core/models/api-request-error";
 import { NotificationService } from "../../../../core/services/notification.service";
@@ -11,7 +8,6 @@ import { EmployeeService } from "../../services/employee.service";
 
 @Component({
     selector: 'app-employee-list',
-    imports: [CurrencyPipe, DatePipe, NgbPagination, RouterLink],
     templateUrl: './employee-list.html',
     styleUrl: './employee-list.scss',
     changeDetection: ChangeDetectionStrategy.OnPush

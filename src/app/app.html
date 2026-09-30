@@ -1,9 +1,54 @@
 <div class="app-shell">
   <aside class="sidebar" aria-label="Primary navigation">
-    <a class="brand" routerLink="/dashboard" aria-label="Payroll Processing System Home">
-      <span style= "color: #fff;">
-        <strong>Payroll Processin System</strong>
+    <a class="brand" routerLink="/dashboard" aria-label="Payroll Processing System home">
+      <span class="brand-mark" aria-hidden="true">P</span>
+      <span>
+        <strong>Payroll</strong>
+        <strong>Processing System</strong>
       </span>
     </a>
+
+    <nav class="primary-nav">
+      <a routerLink="/dashboard" routerLinkActive="active">
+        <span class="nav-icon" aria-hidden="true">01</span>
+        Dashboard
+      </a>
+      <a routerLink="/employees" routerLinkActive="active">
+        <span class="nav-icon" aria-hidden="true">02</span>
+        Employees
+      </a>
+      <a routerLink="/payslips" routerLinkActive="active">
+        <span class="nav-icon" aria-hidden="true">03</span>
+        Payslips
+      </a>
+    </nav>
+
+    <div class="sidebar-note">
+      <span class="status-dot" aria-hidden="true"></span>
+      <div>
+        <small>Data stored in</small>
+        <strong>SQL Server</strong>
+      </div>
+    </div>
+
+    <p class="copyright">© {{ currentYear }} {{ title() }} By Farhaan Hassam</p>
   </aside>
+
+  <header class="mobile-header">
+    <a class="mobile-brand" routerLink="/dashboard" aria-label="Payroll Processing System home">
+      <span class="brand-mark" aria-hidden="true">PP</span>
+      <strong>Payroll</strong>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/employees" routerLinkActive="active">Employees</a>
+      <a routerLink="/payslips" routerLinkActive="active">Payslips</a>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <router-outlet />
+  </main>
+
+  <app-notification-center />
 </div>

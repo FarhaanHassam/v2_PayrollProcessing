@@ -1,0 +1,7 @@
+<section class="notification-stack" aria-live="polite" aria-label="Notifications">
+  @for (notification of notificationService.notifications(); track notification.id) {
+    <ngb-alert [type]="notification.type" (closed)="notificationService.dismiss(notification.id)">
+      {{ notification.message }}
+    </ngb-alert>
+  }
+</section>
